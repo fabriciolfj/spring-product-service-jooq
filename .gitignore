@@ -1,0 +1,10 @@
+
+.idea/
+
+application/target/
+
+entities/.DS_Store
+
+application/.DS_Store
+
+.DS_Store
