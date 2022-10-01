@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.fabriciolfj</groupId>
-    <artifactId>product-service</artifactId>
+    <artifactId>productEntity-service</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
@@ -26,6 +26,6 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-    <name>product-service</name>
+    <name>productEntity-service</name>
 
 </project>

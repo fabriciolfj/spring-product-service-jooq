@@ -1,4 +1,4 @@
-package com.github.fabriciolfj.provider.pojo;
+package com.github.fabriciolfj.provider.repository.category.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

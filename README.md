@@ -1,1 +1,1 @@
-# spring-product-service-jooq
+# spring-productEntity-service-jooq
