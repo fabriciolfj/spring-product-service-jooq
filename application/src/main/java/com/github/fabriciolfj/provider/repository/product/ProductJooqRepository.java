@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface ProductJooqRepository {
 
     Optional<ProductRecord> findByName(final String name);
+
+    void addAllCategoriesToProduct(final Long productId);
 }

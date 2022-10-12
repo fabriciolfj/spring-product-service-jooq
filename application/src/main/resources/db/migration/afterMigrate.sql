@@ -6,6 +6,9 @@ commit;
 
 insert into category (id, name) values (10000, 'mercearia');
 insert into category (id, name) values (20000, 'acougue');
+insert into category (id, name) values (30000, 'ferramentas');
+insert into category (id, name) values (40000, 'papelaria');
+insert into category (id, name) values (50000, 'derivados');
 
 insert into product(id, name, price, category_id) values (1000, 'arroz', 10.7, 10000);
 insert into product(id, name, price, category_id) values (2000, 'feijao', 8.9, 10000);

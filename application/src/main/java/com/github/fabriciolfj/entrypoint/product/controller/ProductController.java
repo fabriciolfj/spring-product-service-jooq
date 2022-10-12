@@ -1,6 +1,7 @@
 package com.github.fabriciolfj.entrypoint.product.controller;
 
 import com.github.fabriciolfj.business.usecase.FindProduct;
+import com.github.fabriciolfj.business.usecase.MergeAllCategoryToProduct;
 import com.github.fabriciolfj.business.usecase.SaveProduct;
 import com.github.fabriciolfj.entrypoint.product.ProductDtoMapper;
 import com.github.fabriciolfj.entrypoint.product.dto.request.ProductRequest;
@@ -17,6 +18,13 @@ public class ProductController {
 
     private final FindProduct findProduct;
     private final SaveProduct saveProduct;
+    private final MergeAllCategoryToProduct mergeAllCategoryToProduct;
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void updateCategoryToProduct(@PathVariable("id") final Long id) {
+        mergeAllCategoryToProduct.execute(id);
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

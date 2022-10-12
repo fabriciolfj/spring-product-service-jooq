@@ -1,5 +1,6 @@
 package com.github.fabriciolfj.provider.service.product;
 
+import com.github.fabriciolfj.business.AddAllCategoryToProduct;
 import com.github.fabriciolfj.business.FindByProductProvider;
 import com.github.fabriciolfj.business.SaveProductProvider;
 import com.github.fabriciolfj.domain.ProductEntity;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class ProductService implements SaveProductProvider, FindByProductProvider {
+public class ProductService implements SaveProductProvider, FindByProductProvider, AddAllCategoryToProduct {
 
     private final ProductJooqRepository jooqRepository;
     private final ProductDataRepository repository;
@@ -37,5 +38,10 @@ public class ProductService implements SaveProductProvider, FindByProductProvide
             log.error("Fail save product, details: {}", e.getMessage());
             throw new ProductSaveException();
         }
+    }
+
+    @Override
+    public void process(final Long productID) {
+        jooqRepository.addAllCategoriesToProduct(productID);
     }
 }
