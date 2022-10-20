@@ -47,4 +47,9 @@ public class CategoryJoopRespositoryImpl implements CategoryJooqRespository {
                 .stream()
                 .findAny();
     }
+
+    @Override
+    public DSLContext getContext() {
+        return context;
+    }
 }

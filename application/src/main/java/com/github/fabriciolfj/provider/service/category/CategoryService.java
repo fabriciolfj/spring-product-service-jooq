@@ -49,7 +49,11 @@ public class CategoryService implements FindTotalProductCategoryProvider, FindTo
     @Override
     public void process(final CategoryEntity category) {
         try {
-            categoryDataRepository.save(CategoryMapper.toData(category.name()));
+            var record = CategoryMapper.toData(category.name());
+            record.attach(categoryJooqRespository.getContext().configuration());
+
+            var key = record.insert();
+            log.info("key inserted category {}", key);
         } catch (Exception e) {
             log.error("Fail save category, details: {}", e.getMessage());
             throw new CategorySaveException();

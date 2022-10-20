@@ -5,6 +5,7 @@ import com.github.fabriciolfj.domain.CategoryQuantitySummaryEntity;
 import com.github.fabriciolfj.entities.Category;
 import com.github.fabriciolfj.provider.repository.category.pojo.CategorySumPriceProductPojo;
 import com.github.fabriciolfj.provider.repository.category.pojo.CategorySumProductPojo;
+import jooq.generated.tables.records.CategoryRecord;
 
 public class CategoryMapper {
 
@@ -20,11 +21,10 @@ public class CategoryMapper {
         return new CategoryQuantitySummaryEntity(pojo.getDescribe(), pojo.getTotal());
     }
 
-    public static Category toData(final String name) {
-        var category = new Category();
-        category.setId(null);
-        category.setName(name);
+    public static CategoryRecord toData(final String name) {
+        var record = new CategoryRecord();
+        record.setName(name);
 
-        return category;
+        return record;
     }
 }
